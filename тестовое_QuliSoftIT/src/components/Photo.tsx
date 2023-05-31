@@ -1,6 +1,5 @@
 /* eslint-disable max-len */
 /* eslint-disable no-console */
-// Photo.js
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
@@ -11,11 +10,7 @@ export const Photo = () => {
   const [photo, setPhoto] = useState<any>(null);
 
   const navigate = useNavigate();
-
-  // Ваш код та обробники подій
-
   const handleClick = () => {
-    // Виклик navigate для переходу на іншу сторінку
     navigate('/');
   };
 
