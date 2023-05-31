@@ -1,21 +1,16 @@
 /* eslint-disable max-len */
 /* eslint-disable no-console */
-// Photo.js
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-
 import axios from 'axios';
+import { Photo } from './types';
 
-export const Photo = () => {
+export const Photos = () => {
   const { id } = useParams();
-  const [photo, setPhoto] = useState<any>(null);
+  const [photo, setPhoto] = useState<Photo | null>(null);
 
   const navigate = useNavigate();
-
-  // Ваш код та обробники подій
-
   const handleClick = () => {
-    // Виклик navigate для переходу на іншу сторінку
     navigate('/');
   };
 
