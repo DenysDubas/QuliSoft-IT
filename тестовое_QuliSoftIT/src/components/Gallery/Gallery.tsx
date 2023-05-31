@@ -3,9 +3,11 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { Galleryes } from '../types';
+import './Gallery.scss';
 
 export const Gallery = () => {
-  const [photos, setPhotos] = useState<any>([]);
+  const [photos, setPhotos] = useState<Galleryes[]>([]);
 
   useEffect(() => {
     const fetchPhotos = async () => {
@@ -27,17 +29,21 @@ export const Gallery = () => {
 
   return (
     <div>
-      <h1>Gallery</h1>
-      {photos.map((photo: any) => (
-        <div key={photo.id}>
+      <h1>Gallery (please, scroll)</h1>
+      {photos.map((photo: Galleryes) => (
+        <div className="galery" key={photo.id}>
           <Link to={`/photos/${photo.id}`}>
-            <img src={photo.urls.thumb} alt={photo.alt_description} />
-            <p>{photo.user.name}</p>
+            <div className="container">
+              <div className="item">
+                <div className="quote">
+                  <img src={photo.urls.thumb} alt={photo.alt_description} />
+                  <p>{photo.user.name}</p>
+                </div>
+              </div>
+            </div>
           </Link>
         </div>
       ))}
     </div>
   );
 };
-
-export default Gallery;

@@ -2,12 +2,12 @@
 /* eslint-disable no-console */
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-
 import axios from 'axios';
+import { Photo } from './types';
 
-export const Photo = () => {
+export const Photos = () => {
   const { id } = useParams();
-  const [photo, setPhoto] = useState<any>(null);
+  const [photo, setPhoto] = useState<Photo | null>(null);
 
   const navigate = useNavigate();
   const handleClick = () => {
